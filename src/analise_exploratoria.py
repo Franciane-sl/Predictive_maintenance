@@ -14,6 +14,7 @@ def inspecionar_dados(df):
     print("\n" + "=" * 30 + " Valores Nulos " + "=" * 30 + f"\n{df.isnull().sum()}")
     print("\n" + "=" * 30 + " Fim da Inspeção Inicial dos Dados " + "=" * 30 + "\n")
 
+# Função para gerar gráfico de distribuição da variável alvo (falha_maquina).
 def grafico_distribuicao_falhas(df):
 
     plt.figure(figsize=(8,5))
@@ -36,7 +37,7 @@ def grafico_distribuicao_falhas(df):
     plt.show()
 
 
-
+# Função para gerar gráfico de distribuição das variáveis operacionais.
 def grafico_distribuicao_variaveis(df):
 
     variaveis = [
@@ -62,6 +63,7 @@ def grafico_distribuicao_variaveis(df):
 
     plt.show()
 
+# Função para gerar gráfico de correlação entre as variáveis.
 def grafico_correlacao(df):
 
     variaveis_numericas = df.select_dtypes(
