@@ -2,6 +2,7 @@ from sklearn.neighbors import KNeighborsClassifier
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.metrics import accuracy_score
 import pandas as pd
+import joblib
 
 # Função para testar o modelo KNN
 def testar_knn(X_train, X_test, y_train, y_test):
@@ -98,3 +99,18 @@ def testar_arvore(X_train, X_test, y_train, y_test):
         )
 
     return pd.DataFrame(resultados)
+
+# Função para salvar o modelo treinado
+def salvar_modelo(modelo, X_train, y_train, caminho):
+
+    modelo.fit(
+        X_train,
+        y_train
+    )
+
+    joblib.dump(
+        modelo,
+        caminho
+    )
+
+    return modelo

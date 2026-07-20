@@ -2,7 +2,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-
+# Função para inspeção inicial de dados.
 def tratar_dados(df):
 
     n_inicial = len(df)
